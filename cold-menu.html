@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous">
+
+    <title>Soğuk İçecekler</title>
+    <link rel="icon" type="image/jpeg" href="static/images/bidemlik.jpg">
+
+<style>
+    /* Menü alanı */
+    .fh5co-food-menu {
+        max-width: 700px;
+        margin: 30px auto;
+        position: relative;
+    }
+
+    /* Menü başlığı */
+    .fh5co-food-menu h2 {
+        margin-bottom: 30px;
+    }
+
+    /* Drinks başlığı ve ikon */
+    .fh5co-drinks {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Drinks ikonu */
+    .fh5co-drinks img {
+        width: 55px;
+        height: 75px;
+        object-fit: contain;
+    }
+
+    /* Liste */
+    .fh5co-food-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Her bir içecek */
+    .fh5co-food-menu li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0;
+        border-bottom: 1px dotted #d0d0d0;
+    }
+
+    .fh5co-food-menu h2 {
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #d0d0d0;
+    }
+
+    /* Son elemanın altında çizgi olmasın */
+    .fh5co-food-menu li:last-child {
+        border-bottom: none;
+    }
+
+    /* Sol taraftaki içerik */
+    .fh5co-food-desc {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Resim */
+    .fh5co-food-desc figure {
+        margin: 0 20px 0 0;
+    }
+
+    .fh5co-food-desc img {
+        width: 110px;
+        height: 75px;
+        object-fit: cover;
+        border-radius: 5px;
+
+        background: #fff;
+        padding: 4px;
+
+        box-shadow:
+            0 2px 5px rgba(0, 0, 0, 0.20),
+            0 6px 15px rgba(0, 0, 0, 0.15);
+
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Ürün adı */
+    .fh5co-food-desc h3 {
+        margin: 0 0 8px 0;
+    }
+
+    /* Açıklama */
+    .fh5co-food-desc p {
+        margin: 0;
+    }
+
+    /* Fiyat */
+    .fh5co-food-pricing {
+        color: #f26522;
+        font-size: 22px;
+        margin-left: 20px;
+        white-space: nowrap;
+    }
+
+        .top-logos {
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    z-index: 10;
+}
+
+    .top-logos img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        display: block;
+    }
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 576px) {
+
+    .fh5co-food-menu {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    .fh5co-food-menu li {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    .fh5co-food-desc {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .fh5co-food-desc figure {
+        flex-shrink: 0;
+        margin-right: 12px;
+    }
+
+    .fh5co-food-desc img {
+        width: 85px;
+        height: 65px;
+    }
+
+    .fh5co-food-desc > div {
+        min-width: 0;
+    }
+
+    .fh5co-food-desc h3 {
+        font-size: 18px;
+        word-break: break-word;
+    }
+
+    .fh5co-food-desc p {
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+    .fh5co-food-pricing {
+        flex-shrink: 0;
+        font-size: 18px;
+        margin-left: 5px;
+        white-space: nowrap;
+    }
+
+    .fh5co-drinks {
+        gap: 8px;
+    }
+
+    .fh5co-drinks img {
+        width: 45px;
+        height: 60px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+    <div class="fh5co-food-menu to-animate-2 fadeIn animated">
+            <!-- Sağ üst logolar -->
+        <div class="top-logos">
+            <a href="menu.html" title="Geri">
+                <img src="static/images/left-arrow.png" alt="Geri">
+            </a>
+
+            <a href="index.html" title="Ana Sayfa">
+                <img src="static/images/home.png" alt="Ana Sayfa">
+            </a>
+        </div>
+        
+        <h2 class="fh5co-drinks">
+            <img src="static/images/coldicon.png" alt="Cold Drinks Icon">
+            <span>Soğuk İçecekler</span>
+        </h2>
+
+        <ul>
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/su.png"
+                             class="img-responsive"
+                             alt="su">
+                    </figure>
+
+                    <div>
+                        <h3>Su</h3>
+                        <p>Buzdolabından veya dışarıdan servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺45.00
+                </div>
+            </li>
+
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cocacola.png"
+                             class="img-responsive"
+                             alt="kola">
+                    </figure>
+
+                    <div>
+                        <h3>Kola</h3>
+                        <p>Buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/fantaa.jpg"
+                             class="img-responsive"
+                             alt="fanta">
+                    </figure>
+
+                    <div>
+                        <h3>Fanta</h3>
+                        <p>Buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/sprite.jpg"
+                             class="img-responsive"
+                             alt="sprite">
+                    </figure>
+
+                    <div>
+                        <h3>Sprite</h3>
+                        <p>Buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kolazero.jpg"
+                             class="img-responsive"
+                             alt="kola zero">
+                    </figure>
+
+                    <div>
+                        <h3>Cola Zero</h3>
+                        <p>Buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/soda.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Soda</h3>
+                        <p>Buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/limonlusoda.jpg"
+                             class="img-responsive"
+                             alt="limonlu soda">
+                    </figure>
+
+                    <div>
+                        <h3>Limonlu Meyveli Soda</h3>
+                        <p>Limon aromalı soda, buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺100.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cileklisoda.jpg"
+                             class="img-responsive"
+                             alt="çilekli soda">
+                    </figure>
+
+                    <div>
+                        <h3>Çilekli Meyveli Soda</h3>
+                        <p>Çilek aromalı soda, buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺100.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/elmalisoda.png"
+                             class="img-responsive"
+                             alt="elmalı soda">
+                    </figure>
+
+                    <div>
+                        <h3>Elmalı Meyveli Soda</h3>
+                        <p>Elma aromalı soda, buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺100.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karpuzcilek.jpg"
+                             class="img-responsive"
+                             alt="karpuz-çilek meyveli soda">
+                    </figure>
+
+                    <div>
+                        <h3>Karpuz-Çilek Meyveli Soda</h3>
+                        <p>Karpuz ve çilek aromalı soda, buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺100.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/seftalisoda.png"
+                             class="img-responsive"
+                             alt="şeftali meyveli soda">
+                    </figure>
+
+                    <div>
+                        <h3>Şeftali Meyveli Soda</h3>
+                        <p>Şeftali aromalı soda, buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺100.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karadutsoda.jpg"
+                             class="img-responsive"
+                             alt="karadut meyveli soda">
+                    </figure>
+
+                    <div>
+                        <h3>Karadut Meyveli Soda</h3>
+                        <p>Karadut aromalı soda, buzlu bardakla servis edilir</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺100.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/churchill.jpg"
+                             class="img-responsive"
+                             alt="Churchill">
+                    </figure>
+
+                    <div>
+                        <h3>Churchill</h3>
+                        <p>Limon, tuz ile buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺135.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/limonfuse.jpg"
+                             class="img-responsive"
+                             alt="Limonlu Fuse Tea">
+                    </figure>
+
+                    <div>
+                        <h3>Limonlu Fuse Tea</h3>
+                        <p>Limon aromalı soğuk çay, buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/seftalifuse.jpg"
+                             class="img-responsive"
+                             alt="Şeftalili Fuse Tea">
+                    </figure>
+
+                    <div>
+                        <h3>Şeftalili Fuse Tea</h3>
+                        <p>Şeftali aromalı soğuk çay, buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/mangofuse.jpg"
+                             class="img-responsive"
+                             alt="Mango Fuse Tea">
+                    </figure>
+
+                    <div>
+                        <h3>Mango Fuse Tea</h3>
+                        <p>Mango aromalı soğuk çay, buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karpuzfuse.jpg"
+                             class="img-responsive"
+                             alt="Karpuz Fuse Tea">
+                    </figure>
+
+                    <div>
+                        <h3>Karpuz Fuse Tea</h3>
+                        <p>Karpuz aromalı soğuk çay, buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cikolatalishake.jpg"
+                             class="img-responsive"
+                             alt="Çikolatalı Milkshake">
+                    </figure>
+
+                    <div>
+                        <h3>Çikolatalı Milkshake</h3>
+                        <p>Çikolata aromalı sütlü içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cileklishake.jpg"
+                             class="img-responsive"
+                             alt="Çilekli Milkshake">
+                    </figure>
+
+                    <div>
+                        <h3>Çilekli Milkshake</h3>
+                        <p>Çilek aromalı sütlü içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karamelshake.jpg"
+                             class="img-responsive"
+                             alt="Karamelli Milkshake">
+                    </figure>
+
+                    <div>
+                        <h3>Karamelli Milkshake</h3>
+                        <p>Karamell aromalı sütlü içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/vanilyashake.jpg"
+                             class="img-responsive"
+                             alt="Vanilyalı Milkshake">
+                    </figure>
+
+                    <div>
+                        <h3>Vanilyalı Milkshake</h3>
+                        <p>Vanilya aromalı sütlü içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kavunshake.jpg"
+                             class="img-responsive"
+                             alt="Kavunlu Milkshake">
+                    </figure>
+
+                    <div>
+                        <h3>Kavunlu Milkshake</h3>
+                        <p>Kavun aromalı sütlü içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cileklifrozen.jpg"
+                             class="img-responsive"
+                             alt="Çilekli Frozen">
+                    </figure>
+
+                    <div>
+                        <h3>Çilekli Frozen</h3>
+                        <p>Çilek, buz, şeker karışımlı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karadutfrozen.jpg"
+                             class="img-responsive"
+                             alt="karadutlu frozen">
+                    </figure>
+
+                    <div>
+                        <h3>Karadutlu Frozen</h3>
+                        <p>Karadut, buz, şeker karışımlı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karpuzfrozen.jpg"
+                             class="img-responsive"
+                             alt="Karpuzlu Frozen">
+                    </figure>
+
+                    <div>
+                        <h3>Karpuzlu Frozen</h3>
+                        <p>Karpuz, buz, şeker karışımlı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kirmizifrozen.jpg"
+                             class="img-responsive"
+                             alt="Kırmızı Orman Meyveli Frozen">
+                    </figure>
+
+                    <div>
+                        <h3>Kırmızı Orman Meyveli Frozen</h3>
+                        <p>Kırmızı orman meyveleri aromalı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/mangofrozen.jpg"
+                             class="img-responsive"
+                             alt="Mango Frozen">
+                    </figure>
+
+                    <div>
+                        <h3>Mango Frozen</h3>
+                        <p>Mango, buz, şeker karışımlı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/bogurtlenfrozen.jpg"
+                             class="img-responsive"
+                             alt="Böğürtlen Frozen">
+                    </figure>
+
+                    <div>
+                        <h3>Böğürtlen Frozen</h3>
+                        <p>Böğürtlen, buz, şeker karışımlı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/limonfrozen.jpg"
+                             class="img-responsive"
+                             alt="Limonlu Frozen">
+                    </figure>
+
+                    <div>
+                        <h3>Limonlu Frozen</h3>
+                        <p>Limon, buz, şeker karışımlı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/frappe.jpg"
+                             class="img-responsive"
+                             alt="sade frappe">
+                    </figure>
+
+                    <div>
+                        <h3>Sade Frappe</h3>
+                        <p>Granül kahve, buz ve suyla hazırlanan soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cikolatafrappe.jpg"
+                             class="img-responsive"
+                             alt="çikoatalı frappe">
+                    </figure>
+
+                    <div>
+                        <h3>Çikolatalı Frappe</h3>
+                        <p>Çikolata, kahve, buz ve suyla hazırlanan soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karamelfrappe.jpg"
+                             class="img-responsive"
+                             alt="Karamel Frappe">
+                    </figure>
+
+                    <div>
+                        <h3>Karamel Frappe</h3>
+                        <p>Karamel, kahve, buz ve suyla hazırlanan soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/oreofrappe.jpg"
+                             class="img-responsive"
+                             alt="oreo frappe">
+                    </figure>
+
+                    <div>
+                        <h3>Oreolu Frappe</h3>
+                        <p>Oreo parçacıklarıyla zenginleştirilmiş, klasik frappe.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cileksmoothie.jpg"
+                             class="img-responsive"
+                             alt="Çilekli Smoothie">
+                    </figure>
+
+                    <div>
+                        <h3>Çilekli Smoothie</h3>
+                        <p>Çilek aromalı sağlıklı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/bogurtlensmoothie.jpg"
+                             class="img-responsive"
+                             alt="Böğürtlen Smoothie">
+                    </figure>
+
+                    <div>
+                        <h3>Böğürtlen Smoothie</h3>
+                        <p>Böğürtlen aromalı, sağlıklı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/muzlusmoothie.jpg"
+                             class="img-responsive"
+                             alt="Muzlu Smoothie">
+                    </figure>
+
+                    <div>
+                        <h3>Muzlu Smoothie</h3>
+                        <p>Muz aromalı, sağlıklı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/coollime.jpg"
+                             class="img-responsive"
+                             alt="Cool Lime">
+                    </figure>
+
+                    <div>
+                        <h3>Cool Lime</h3>
+                        <p>Misket limon ve naneyle hazırlanan soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/berry.png"
+                             class="img-responsive"
+                             alt="Berry Hibiscus">
+                    </figure>
+
+                    <div>
+                        <h3>Berry Hibiscus</h3>
+                        <p>Böğürtlen ve hibiskus aromalı soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/limonata.jpg"
+                             class="img-responsive"
+                             alt="Limonata">
+                    </figure>
+
+                    <div>
+                        <h3>Limonata</h3>
+                        <p>Buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/portakalsuyu.jpg"
+                             class="img-responsive"
+                             alt="portakal suyu">
+                    </figure>
+
+                    <div>
+                        <h3>Sıkma Portakal</h3>
+                        <p>Taze sıkılmış portakal suyu.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/visneli.jpg"
+                             class="img-responsive"
+                             alt="Vişneli Meyve Suyu">
+                    </figure>
+
+                    <div>
+                        <h3>Vişneli Meyve Suyu</h3>
+                        <p>Vişne aromalı meyve suyu.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kayisifuse.jpg"
+                             class="img-responsive"
+                             alt="Kayısılı Meyve Suyu">
+                    </figure>
+
+                    <div>
+                        <h3>Kayısılı Meyve Suyu</h3>
+                        <p>Kayısı aromalı meyve suyu.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cappyatom.jpg"
+                             class="img-responsive"
+                             alt="cappy atom">
+                    </figure>
+
+                    <div>
+                        <h3>Atom Meyve Suyu</h3>
+                        <p>Meyve karışımları ile hazırlanan soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cappyportakal.jpg"
+                             class="img-responsive"
+                             alt="cappy portakal">
+                    </figure>
+
+                    <div>
+                        <h3>Portakallı Meyve Suyu</h3>
+                        <p>Portakal aromalı meyve suyu.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺150.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/ayran.jpg"
+                             class="img-responsive"
+                             alt="Ayran">
+                    </figure>
+
+                    <div>
+                        <h3>Ayran</h3>
+                        <p>Buzlu bardakla servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺55.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/icelatte.jpg"
+                             class="img-responsive"
+                             alt="ice latte">
+                    </figure>
+
+                    <div>
+                        <h3>Ice Latte</h3>
+                        <p>Süt ve espresso ile hazırlanan soğuk kahve</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/icefiltre.jpg"
+                             class="img-responsive"
+                             alt="ice filtre kahve">
+                    </figure>
+
+                    <div>
+                        <h3>Ice Filtre Kahve</h3>
+                        <p>Kahve kağıdı ile filtrelenen soğuk espresso.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/iceamericano.jpg"
+                             class="img-responsive"
+                             alt="ice americano">
+                    </figure>
+
+                    <div>
+                        <h3>Ice Americano</h3>
+                        <p>İki shot espresso ile hazırlanan soğuk kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/icemocha.jpg"
+                             class="img-responsive"
+                             alt="ice mocha">
+                    </figure>
+
+                    <div>
+                        <h3>Ice Mocha</h3>
+                        <p>Süt ve espresso ile hazırlanan soğuk kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+                                    <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/icecikolata.jpg"
+                             class="img-responsive"
+                             alt="ice cikolata">
+                    </figure>
+
+                    <div>
+                        <h3>Ice Çikolata</h3>
+                        <p>Çikolata aromasıyla servis edilen soğuk içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺225.00
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+</body>
+</html>

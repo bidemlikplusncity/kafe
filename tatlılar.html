@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous">
+
+    <title>Tatlılar</title>
+
+    <link rel="icon" type="image/jpeg" href="static/images/bidemlik.jpg">
+
+<style>
+    /* Menü alanı */
+    .fh5co-food-menu {
+        max-width: 700px;
+        margin: 30px auto;
+        position: relative;
+    }
+
+    /* Menü başlığı */
+    .fh5co-food-menu h2 {
+        margin-bottom: 30px;
+    }
+
+    /* Drinks başlığı ve ikon */
+    .fh5co-drinks {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Drinks ikonu */
+    .fh5co-drinks img {
+        width: 55px;
+        height: 75px;
+        object-fit: contain;
+    }
+
+    /* Liste */
+    .fh5co-food-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Her bir içecek */
+    .fh5co-food-menu li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0;
+        border-bottom: 1px dotted #d0d0d0;
+    }
+
+    .fh5co-food-menu h2 {
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #d0d0d0;
+    }
+
+    /* Son elemanın altında çizgi olmasın */
+    .fh5co-food-menu li:last-child {
+        border-bottom: none;
+    }
+
+    /* Sol taraftaki içerik */
+    .fh5co-food-desc {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Resim */
+    .fh5co-food-desc figure {
+        margin: 0 20px 0 0;
+    }
+
+    .fh5co-food-desc img {
+        width: 110px;
+        height: 75px;
+        object-fit: cover;
+        border-radius: 5px;
+
+        background: #fff;
+        padding: 4px;
+
+        box-shadow:
+            0 2px 5px rgba(0, 0, 0, 0.20),
+            0 6px 15px rgba(0, 0, 0, 0.15);
+
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Ürün adı */
+    .fh5co-food-desc h3 {
+        margin: 0 0 8px 0;
+    }
+
+    /* Açıklama */
+    .fh5co-food-desc p {
+        margin: 0;
+    }
+
+    /* Fiyat */
+    .fh5co-food-pricing {
+        color: #f26522;
+        font-size: 22px;
+        margin-left: 20px;
+        white-space: nowrap;
+    }
+
+    .top-logos {
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    z-index: 10;
+}
+
+    .top-logos img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        display: block;
+    }
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 576px) {
+
+    .fh5co-food-menu {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    .fh5co-food-menu li {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    .fh5co-food-desc {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .fh5co-food-desc figure {
+        flex-shrink: 0;
+        margin-right: 12px;
+    }
+
+    .fh5co-food-desc img {
+        width: 85px;
+        height: 65px;
+    }
+
+    .fh5co-food-desc > div {
+        min-width: 0;
+    }
+
+    .fh5co-food-desc h3 {
+        font-size: 18px;
+        word-break: break-word;
+    }
+
+    .fh5co-food-desc p {
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+    .fh5co-food-pricing {
+        flex-shrink: 0;
+        font-size: 18px;
+        margin-left: 5px;
+        white-space: nowrap;
+    }
+
+    .fh5co-drinks {
+        gap: 8px;
+    }
+
+    .fh5co-drinks img {
+        width: 45px;
+        height: 60px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <div class="fh5co-food-menu to-animate-2 fadeIn animated">
+            <!-- Sağ üst logolar -->
+        <div class="top-logos">
+            <a href="menu.html" title="Geri">
+                <img src="static/images/left-arrow.png" alt="Geri">
+            </a>
+
+            <a href="index.html" title="Ana Sayfa">
+                <img src="static/images/home.png" alt="Ana Sayfa">
+            </a>
+        </div>
+
+        <h2 class="fh5co-drinks">
+            <img src="static/images/desserticon.png" alt="Tatlılar Icon">
+            <span>Tatlılar</span>
+        </h2>
+
+        <ul>
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/izmirbomba.png"
+                             class="img-responsive"
+                             alt="izmir bomba">
+                    </figure>
+
+                    <div>
+                        <h3>İzmir Bomba</h3>
+                        <p>Akışkan çikolatasıyla dolu, lezzetli bir tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺110.00
+                </div>
+            </li>
+
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/findiklikurabiye.png"
+                             class="img-responsive"
+                             alt="fındıklı kurabiye">
+                    </figure>
+
+                    <div>
+                        <h3>Fındıklı Kurabiye</h3>
+                        <p>Taze fındıkla yapılan lezzetli kurabiye.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺110.00
+                </div>
+            </li>
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/elmalikurabiye.png"
+                             class="img-responsive"
+                             alt="elmalı kurabiye">
+                    </figure>
+
+                    <div>
+                        <h3>Elmalı Kurabiye</h3>
+                        <p>İçi elma marmelatıyla doldurulmuş lezzetli kurabiye.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺110.00
+                </div>
+            </li>
+
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cikolatalikurabiye.jpg"
+                             class="img-responsive"
+                             alt="çikolatalı kurabiye">
+                    </figure>
+
+                    <div>
+                        <h3>Çikolatalı Kurabiye</h3>
+                        <p>İçi çikolatayla doldurulmuş lezzetli kurabiye.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺110.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/damlacikolatali.jpg"
+                             class="img-responsive"
+                             alt="damla çikolatalı kurabiye">
+                    </figure>
+
+                    <div>
+                        <h3>Damla Çikolatalı Kurabiye</h3>
+                        <p>Üstü damla çikolatayla kaplılezzetli kurabiye.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺110.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/franbuazli.jpg"
+                             class="img-responsive"
+                             alt="franbuazlı kurabiye">
+                    </figure>
+
+                    <div>
+                        <h3>Franbuazlı Kurabiye</h3>
+                        <p>İçi franbuazla doldurulmuş lezzetli kurabiye.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺110.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kahvekurabiye.jpg"
+                             class="img-responsive"
+                             alt="türk kahveli kurabiye">
+                    </figure>
+
+                    <div>
+                        <h3>Türk Kahveli Kurabiye</h3>
+                        <p>Türk kahve lezzetiyle kurabiye.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺110.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/yarimporsiyon.png"
+                             class="img-responsive"
+                             alt="yarım porsiyon tatlı kurabiye tabağı">
+                    </figure>
+
+                    <div>
+                        <h3>Yarım Porsiyon Tatlı Kurabiye Tabağı</h3>
+                        <p>10 adet tatlı kurabiye tabağı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺100.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/yarımporsiyon2.jpg"
+                             class="img-responsive"
+                             alt="yarım porsiyon tuzlu kurabiye tabağı">
+                    </figure>
+
+                    <div>
+                        <h3>Yarım Porsiyon Tuzlu Kurabiye Tabağı</h3>
+                        <p>10 adet tuzlu kurabiye tabağı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺100.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karisiktabak.jpeg"
+                             class="img-responsive"
+                             alt="karışık kurabiye tabağı">
+                    </figure>
+
+                    <div>
+                        <h3>Yarım Porsiyon Karışık Kurabiye Tabağı</h3>
+                        <p>10 adet karışık kurabiye tabağı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺100.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/yarimporsiyon.png   "
+                             class="img-responsive"
+                             alt="tam porsiyon tatlı kurabiye tabağı">
+                    </figure>
+
+                    <div>
+                        <h3>Tam Porsiyon Tatlı Kurabiye Tabağı</h3>
+                        <p>20 adet tatlı kurabiye tabağı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺200.00
+                </div>
+            </li>
+
+                                    <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/yarımporsiyon2.jpg"
+                             class="img-responsive"
+                             alt="tam porsiyon tuzlu kurabiye tabağı">
+                    </figure>
+
+                    <div>
+                        <h3>Tam Porsiyon Tuzlu Kurabiye Tabağı</h3>
+                        <p>20 adet tuzlu kurabiye tabağı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺200.00
+                </div>
+            </li>
+
+                                    <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karisiktabak.jpeg"
+                             class="img-responsive"
+                             alt="karışık tuzlu ve tatlı kurabiye tabağı">
+                    </figure>
+
+                    <div>
+                        <h3>Tam Porsiyon Karışık Kurabiye Tabağı</h3>
+                        <p>20 adet karışık kurabiye tabağı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺200.00
+                </div>
+            </li>
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kruvasan.jpg"
+                             class="img-responsive"
+                             alt="kruvasan">
+                    </figure>
+
+                    <div>
+                        <h3>Kruvasan</h3>
+                        <p>İçi çikolata dolu Fransız hamur tatlısı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺110.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kaymaklidondurma.jpg"
+                             class="img-responsive"
+                             alt="kaymaklı dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Kaymaklı Dondurma</h3>
+                        <p>Kaymak ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/vanilyalidondurma.png"
+                             class="img-responsive"
+                             alt="vanilyalı dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Vanilyalı Dondurma</h3>
+                        <p>Vanilya ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cikolatalidondurma.png"
+                             class="img-responsive"
+                             alt="çikolatalı dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Çikolatalı Dondurma</h3>
+                        <p>Çikolata ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karamellidondurma.jpg"
+                             class="img-responsive"
+                             alt="karamel dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Karamel Dondurma</h3>
+                        <p>Karamel ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cileklidondurma.jpg"
+                             class="img-responsive"
+                             alt="çilekli dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Çilekli Dondurma</h3>
+                        <p>Çilek ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/visnelidondurma.png"
+                             class="img-responsive"
+                             alt="vişne sorbe dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Vişne Sorbe Dondurma</h3>
+                        <p>Vişne ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/meyvesoleni.jpg"
+                             class="img-responsive"
+                             alt="meyveli şöleni dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Meyveli Şöleni Dondurma</h3>
+                        <p>Meveli ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/limonludondurma.png"
+                             class="img-responsive"
+                             alt="limonlu dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Limonlu Dondurma</h3>
+                        <p>Limon ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/bluesky.jpg"
+                             class="img-responsive"
+                             alt="bluesky">
+                    </figure>
+
+                    <div>
+                        <h3>Blue Sky Dondurma</h3>
+                        <p>Parlak mavi renkli İtalyan kreması ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/mangodondurma.jpg"
+                             class="img-responsive"
+                             alt="mango dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Mango Dondurma</h3>
+                        <p>Mango ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/vanilyalidondurma.png"
+                             class="img-responsive"
+                             alt="vanilyali dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Marshmallow Dondurma</h3>
+                        <p>Marshmallow ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/antepdondurma.jpg"
+                             class="img-responsive"
+                             alt="antep dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Antep Fıstıklı Dondurma</h3>
+                        <p>Antep fıstığı ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/oreodondurma.jpg"
+                             class="img-responsive"
+                             alt="oreo dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Oreolu Dondurma</h3>
+                        <p>Oreo kurabiyesi ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karadutdondurma.png"
+                             class="img-responsive"
+                             alt="karadut dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Karadut Dondurma</h3>
+                        <p>Karadut ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/muzludondurma.png"
+                             class="img-responsive"
+                             alt="muzlu dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Muzlu Dondurma</h3>
+                        <p>Muz ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/balbadem.png"
+                             class="img-responsive"
+                             alt="bal badem dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Bal Badem Dondurma</h3>
+                        <p>Bal ve badem ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/nanelidondurma.jpg"
+                             class="img-responsive"
+                             alt="naneli dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Naneli Dondurma</h3>
+                        <p>Nane ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kavunludondurma.png"
+                             class="img-responsive"
+                             alt="kavunlu dondurma">
+                    </figure>
+
+                    <div>
+                        <h3>Kavunlu Dondurma</h3>
+                        <p>Kavun ve krema ile hazırlanan soğuk tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/lotus.jpg"
+                             class="img-responsive"
+                             alt="lotus">
+                    </figure>
+
+                    <div>
+                        <h3>Lotus Cheesecake</h3>
+                        <p>Lotus bisküvisi ve eşsiz kremasıyla cheesecake.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/limon.jpg"
+                             class="img-responsive"
+                             alt="limon">
+                    </figure>
+
+                    <div>
+                        <h3>Limonlu Cheesecake</h3>
+                        <p>Limon aromalı eşssiz kremasıyla cheesecake.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/franbuaz.jpg"
+                             class="img-responsive"
+                             alt="franbuaz">
+                    </figure>
+
+                    <div>
+                        <h3>Franbuazlı Cheesecake</h3>
+                        <p>Franbuaz aroması ve kremasıyla cheesecake.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/magnolya.jpg"
+                             class="img-responsive"
+                             alt="magnolya">
+                    </figure>
+
+                    <div>
+                        <h3>Magnolya</h3>
+                        <p>Kremsi muhallebi ve ufalanmış bisküvili tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺200.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/fıstık.jpg"
+                             class="img-responsive"
+                             alt="fıstık">
+                    </figure>
+
+                    <div>
+                        <h3>Fıstık Dalgası</h3>
+                        <p>Yoğun antep fıstığı ile servis edilen tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/sansebastian.png"
+                             class="img-responsive"
+                             alt="san sebastian">
+                    </figure>
+
+                    <div>
+                        <h3>San Sebastian Cheesecake</h3>
+                        <p>Dışı karamelize, içi ise akışkan ve kremamsı cheesecake.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/profiterol.png"
+                             class="img-responsive"
+                             alt="profiterol">
+                    </figure>
+
+                    <div>
+                        <h3>Profiterollü Pasta</h3>
+                        <p>İçi özel kremayla doldurulmuş kabarık hamur toplarıyla yapılmış pasta.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/marlenka.jpg"
+                             class="img-responsive"
+                             alt="marlenka">
+                    </figure>
+
+                    <div>
+                        <h3>Cevizli Marlenka</h3>
+                        <p>İnce katmanlı keklerin arasına yoğun karamelize süt kreması ve ceviz tatlısı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/mozaik.png"
+                             class="img-responsive"
+                             alt="mozaik">
+                    </figure>
+
+                    <div>
+                        <h3>Mozaik Pasta</h3>
+                        <p>Petibör bisküvisi ve çikolata ile hazırlanmış tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/trilece.jpg"
+                             class="img-responsive"
+                             alt="trileçe">
+                    </figure>
+
+                    <div>
+                        <h3>Trileçe</h3>
+                        <p>Süngerimsi pandispanya kekinin sütle ıslatılması ile yapılan tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/tiramisu.jpg"
+                             class="img-responsive"
+                             alt="tiramisu">
+                    </figure>
+
+                    <div>
+                        <h3>Tiramisu</h3>
+                        <p>Kahve ile ıslatılmış kedidili bisküvileriyle yapılan tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/spoonful.jpg"
+                             class="img-responsive"
+                             alt="spoonful">
+                    </figure>
+
+                    <div>
+                        <h3>Spoonful</h3>
+                        <p>Bardak veya kase içinde katmanlar halinde hazırlanan çikolatalı tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺250.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/supangle.jpg"
+                             class="img-responsive"
+                             alt="supangle">
+                    </figure>
+
+                    <div>
+                        <h3>Supangle</h3>
+                        <p>Kek veya brownie parçaları bulunan, yarı katı ve yarı sıvı kıvamda klasik bir tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺250.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/waffle.png"
+                             class="img-responsive"
+                             alt="waffle">
+                    </figure>
+
+                    <div>
+                        <h3>Waffle</h3>
+                        <p>Kabartma tozlu hamurun, özel desenli iki metal plaka arasında pişirilmesiyle yapılan tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺250.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/meyvelipasta.jpg"
+                             class="img-responsive"
+                             alt="meyveli pasta">
+                    </figure>
+
+                    <div>
+                        <h3>Meyveli Pasta</h3>
+                        <p>Meyve aromalı pasta.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/belcika.jpg"
+                             class="img-responsive"
+                             alt="Belçika">
+                    </figure>
+
+                    <div>
+                        <h3>Belçika Çikolatalı Pasta</h3>
+                        <p>Belçika çikolatasıyla hazırlanan pasta.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺300.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/oreovalvet.jpg"
+                             class="img-responsive"
+                             alt="oreo">
+                    </figure>
+
+                    <div>
+                        <h3>Oreo Velvet</h3>
+                        <p>Oreo bisküvisiyle hazırlanan kadife tatlı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺275.00
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<!--
+	Identity by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Bİ DEMLİK PLUS NCITY</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link rel="icon" type="image/jpeg" href="static/images/bidemlik.jpg">
+
+		<!--[if lte IE 8]><script src="static/assets/js/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="static/assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="static/assets/css/ie8.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+
+		
+		<style>
+			/* POP-UP ARKA PLANI */
+			.popup-overlay {
+				position: fixed;
+				inset: 0;
+				z-index: 99999;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				padding: 20px;
+				background: rgba(0, 0, 0, 0.78);
+
+				opacity: 1;
+				visibility: visible;
+
+				transition: opacity 0.3s ease,
+							visibility 0.3s ease;
+			}
+
+			/* POP-UP KUTUSU */
+			.popup-box {
+				position: relative;
+				width: 100%;
+				max-width: 420px;
+				box-sizing: border-box;
+
+				padding: 28px 24px;
+				border-radius: 16px;
+
+				background: #222222;
+				color: #ffffff;
+				text-align: center;
+
+				border: 1px solid rgba(255, 255, 255, 0.15);
+				box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+
+				animation: popupAppear 0.35s ease;
+			}
+
+			/* KAPATMA ÇARPI İŞARETİ */
+			.popup-close {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				z-index: 2;
+
+				width: 38px;
+				height: 38px;
+				padding: 0;
+
+				border: none;
+				border-radius: 50%;
+
+				background: rgba(0, 0, 0, 0.75);
+				color: white;
+
+				font-size: 30px;
+				line-height: 38px;
+				text-align: center;
+
+				cursor: pointer;
+			}
+
+			.popup-close:hover {
+				background: #b99354;
+				color: #111111;
+			}
+
+			/* POP-UP FOTOĞRAFI */
+			.popup-image {
+				display: block;
+				width: 100%;
+				height: 380px;
+				object-fit: cover;
+				object-position: center;
+				border-radius: 10px;
+				margin: 0 0 22px 0;
+			}
+
+			/* BAŞLIK */
+			.popup-box h2 {
+				color: #ffffff;
+				font-size: 23px;
+				line-height: 1.4;
+				margin: 0 0 14px 0;
+			}
+
+			/* AÇIKLAMA */
+			.popup-box p {
+				color: #dddddd;
+				font-size: 15px;
+				line-height: 1.7;
+				margin: 0 0 22px 0;
+			}
+
+			/* MENÜ BUTONU */
+			.popup-button {
+				display: inline-block;
+				padding: 12px 24px;
+
+				border-radius: 8px;
+				background: #b99354;
+				color: #111111 !important;
+
+				font-size: 13px;
+				font-weight: bold;
+				text-decoration: none;
+
+				transition: background 0.2s ease;
+			}
+
+			.popup-button:hover {
+				background: #d2b477;
+			}
+
+			/* AÇILIŞ ANİMASYONU */
+			@keyframes popupAppear {
+				from {
+					opacity: 0;
+					transform: translateY(15px) scale(0.95);
+				}
+
+				to {
+					opacity: 1;
+					transform: translateY(0) scale(1);
+				}
+			}
+
+			/* MOBİL UYUMLULUK */
+			@media (max-width: 480px) {
+			.popup-box {
+				max-width: 350px;
+				padding: 24px 18px;
+			}
+
+			.popup-image {
+				height: 300px;
+			}
+
+			.popup-box h2 {
+				font-size: 20px;
+			}
+
+			.popup-box p {
+				font-size: 14px;
+			}
+		}
+
+			/* HAREKETİ AZALTMA TERCİHİ */
+			@media (prefers-reduced-motion: reduce) {
+				.popup-overlay,
+				.popup-box {
+					animation: none;
+					transition: none;
+				}
+			}
+		</style>
+
+	</head>
+	<body class="is-loading">
+
+		<div id="popupOverlay" class="popup-overlay">
+
+			<div class="popup-box">
+
+				<!-- Kapatma butonu -->
+				<button type="button"
+						id="popupClose"
+						class="popup-close"
+						aria-label="Pencereyi kapat">
+					&times;
+				</button>
+
+				<a href="https://biletinial.com/tr-tr/etkinlik/cukur-quiz-night-"
+				target="_blank"
+				rel="noopener noreferrer">
+					<img src="static/images/afis.jpeg"
+						alt="Kurtlar Vadisi Quiz Night - Biletini Al"
+						class="popup-image">
+				</a>
+
+				<h2>KURTLAR VADİSİ QUIZ NIGHT</h2>
+
+				<p>
+					Birbirinden güzel sürprizler için sen de bu geceye katıl
+				</p>
+
+				<a href="https://biletinial.com/tr-tr/etkinlik/kurtlar-vadisi-quiz-night-1-97-bolum" class="popup-button">
+					BİLETİNİ AL
+				</a>
+
+			</div>
+
+		</div>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<span class="avatar"><img src="static/images/logo.jpg" alt="logoresim" height="200px"/></span>
+							<h1>HOŞ GELDİNİZ</h1>
+						</header>
+						<!--
+						<hr />
+						<h2>Extra Stuff!</h2>
+						<form method="post" action="#">
+							<div class="field">
+								<input type="text" name="name" id="name" placeholder="Name" />
+							</div>
+							<div class="field">
+								<input type="email" name="email" id="email" placeholder="Email" />
+							</div>
+							<div class="field">
+								<div class="select-wrapper">
+									<select name="department" id="department">
+										<option value="">Department</option>
+										<option value="sales">Sales</option>
+										<option value="tech">Tech Support</option>
+										<option value="null">/dev/null</option>
+									</select>
+								</div>
+							</div>
+							<div class="field">
+								<textarea name="message" id="message" placeholder="Message" rows="4"></textarea>
+							</div>
+							<div class="field">
+								<input type="checkbox" id="human" name="human" /><label for="human">I'm a human</label>
+							</div>
+							<div class="field">
+								<label>But are you a robot?</label>
+								<input type="radio" id="robot_yes" name="robot" /><label for="robot_yes">Yes</label>
+								<input type="radio" id="robot_no" name="robot" /><label for="robot_no">No</label>
+							</div>
+							<ul class="actions">
+								<li><a href="#" class="button">Get Started</a></li>
+							</ul>
+						</form>
+						<hr />
+						-->
+
+						<footer>
+							<ul class="icons">
+								<li><a href="https://www.instagram.com/bidemlikplusncity/" class="fa-instagram">Instagram</a></li>
+								<li>
+    								<a href="menu.html" class="menu-icon">
+        								<img src="static/images/menu.png" alt="Menü">
+    								</a>
+								</li>
+							</ul>
+						</footer>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>&copy; 2026</li>
+							<li>Design: <a href="https://www.instagram.com/tolgaozatici/">TOLGA ÖZATICI</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="static/assets/js/respond.min.js"></script><![endif]-->
+			<script>
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-loading\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+
+			
+			<script>
+				const popupOverlay = document.getElementById("popupOverlay");
+				const popupClose = document.getElementById("popupClose");
+
+				function closePopup() {
+					popupOverlay.style.opacity = "0";
+					popupOverlay.style.visibility = "hidden";
+					popupOverlay.style.pointerEvents = "none";
+				}
+
+				// Sağ üstteki X butonu
+				popupClose.addEventListener("click", closePopup);
+
+				// ESC tuşuyla kapatma
+				document.addEventListener("keydown", function(event) {
+					if (event.key === "Escape") {
+						closePopup();
+					}
+				});
+
+				// Karanlık alana tıklayınca kapatma
+				popupOverlay.addEventListener("click", function(event) {
+					if (event.target === popupOverlay) {
+						closePopup();
+					}
+				});
+			</script>
+
+
+	</body>
+</html>

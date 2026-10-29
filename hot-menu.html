@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous">
+
+    <title>Sıcak İçecekler</title>
+    <link rel="icon" type="image/jpeg" href="static/images/bidemlik.jpg">
+
+<style>
+    /* Menü alanı */
+    .fh5co-food-menu {
+        max-width: 700px;
+        margin: 30px auto;
+        position: relative;
+    }
+
+    /* Menü başlığı */
+    .fh5co-food-menu h2 {
+        margin-bottom: 30px;
+    }
+
+    /* Drinks başlığı ve ikon */
+    .fh5co-drinks {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Drinks ikonu */
+    .fh5co-drinks img {
+        width: 55px;
+        height: 75px;
+        object-fit: contain;
+    }
+
+    /* Liste */
+    .fh5co-food-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Her bir içecek */
+    .fh5co-food-menu li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0;
+        border-bottom: 1px dotted #d0d0d0;
+    }
+
+    .fh5co-food-menu h2 {
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #d0d0d0;
+    }
+
+    /* Son elemanın altında çizgi olmasın */
+    .fh5co-food-menu li:last-child {
+        border-bottom: none;
+    }
+
+    /* Sol taraftaki içerik */
+    .fh5co-food-desc {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Resim */
+    .fh5co-food-desc figure {
+        margin: 0 20px 0 0;
+    }
+
+    .fh5co-food-desc img {
+        width: 110px;
+        height: 75px;
+        object-fit: cover;
+        border-radius: 5px;
+
+        background: #fff;
+        padding: 4px;
+
+        box-shadow:
+            0 2px 5px rgba(0, 0, 0, 0.20),
+            0 6px 15px rgba(0, 0, 0, 0.15);
+
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Ürün adı */
+    .fh5co-food-desc h3 {
+        margin: 0 0 8px 0;
+    }
+
+    /* Açıklama */
+    .fh5co-food-desc p {
+        margin: 0;
+    }
+
+    /* Fiyat */
+    .fh5co-food-pricing {
+        color: #f26522;
+        font-size: 22px;
+        margin-left: 20px;
+        white-space: nowrap;
+    }
+    .top-logos {
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    z-index: 10;
+}
+
+    .top-logos img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* Mobil */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 576px) {
+
+    .fh5co-food-menu {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 20px auto;
+        box-sizing: border-box;
+    }
+
+    .fh5co-food-menu li {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    .fh5co-food-desc {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .fh5co-food-desc figure {
+        flex-shrink: 0;
+        margin-right: 12px;
+    }
+
+    .fh5co-food-desc img {
+        width: 85px;
+        height: 65px;
+    }
+
+    .fh5co-food-desc > div {
+        min-width: 0;
+    }
+
+    .fh5co-food-desc h3 {
+        font-size: 18px;
+        word-break: break-word;
+    }
+
+    .fh5co-food-desc p {
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+    .fh5co-food-pricing {
+        flex-shrink: 0;
+        font-size: 18px;
+        margin-left: 5px;
+        white-space: nowrap;
+    }
+
+    .fh5co-drinks {
+        gap: 8px;
+    }
+
+    .fh5co-drinks img {
+        width: 45px;
+        height: 60px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <div class="fh5co-food-menu to-animate-2 fadeIn animated">
+
+            <!-- Sağ üst logolar -->
+        <div class="top-logos">
+            <a href="menu.html" title="Geri">
+                <img src="static/images/left-arrow.png" alt="Geri">
+            </a>
+
+            <a href="index.html" title="Ana Sayfa">
+                <img src="static/images/home.png" alt="Ana Sayfa">
+            </a>
+        </div>
+
+        <h2 class="fh5co-drinks">
+            <img src="static/images/coffeeicon.png" alt="Coffee">
+            <span>Sıcak İçecekler</span>
+        </h2>
+
+        <ul>
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/çay.jpg"
+                             class="img-responsive"
+                             alt="çay">
+                    </figure>
+
+                    <div>
+                        <h3>Çay</h3>
+                        <p>Sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/elmatarcin.jpg"
+                             class="img-responsive"
+                             alt="Green Juice">
+                    </figure>
+
+                    <div>
+                        <h3>Elma Tarçın Bitki Çayı</h3>
+                        <p>Elma aromalı, tarçınla servis edilen bitki çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/fincancay.jpg"
+                             class="img-responsive"
+                             alt="Soft Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Fincan Çay</h3>
+                        <p>Büyük bardakta sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺100.00
+                </div>
+            </li>
+
+
+            <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/demlikcay.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Demlik Çay</h3>
+                        <p>Demlikte servis edilen sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺425.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kiscayi.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Kış Çayı</h3>
+                        <p>Kurutulmuş meyvelerle hazırlanan sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kusburnu.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Kırık Kuşburnu Bitki Çayı</h3>
+                        <p>Kuşburnu meyvelerini kurutarak hazırlanan sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/adacayi.png"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Ada Çayı</h3>
+                        <p>Aromatik kokulu bitkilerden yapılan sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/tropikalcay.jpeg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Tropikal Bitki Çayı</h3>
+                        <p>Tropikal bitkilerle hazırlanan sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/yesilcay.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Yeşil Çay</h3>
+                        <p>Antioksidan özellikleriyle bilinen sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/limonluyesilcay.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Limonlu Yeşil Çay</h3>
+                        <p>Antioksidan özellikli limon aromalı sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/melisacayi.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Melisa Çayı</h3>
+                        <p>Rahatlatıcı etkili limon kokulu sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/ihlamur.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Çiçek Ihlamur Bitki Çayı</h3>
+                        <p>Ihlamur bitkisiyle hazırlanan aromatik sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/rezene.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Rezene Çayı</h3>
+                        <p>Rezene bitkisiyle hazırlanan sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/nanelimon.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Nane Limon Bitki Çayı</h3>
+                        <p>Nane yaprakları ve limonla hazırlanan aromatik sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/yasemin.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Yaseminli Bitki Çayı</h3>
+                        <p>Yasemin çiçekleriyle hazırlanan aromatik sıcak Türk çayı.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺125.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kivi.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Kivi Oralet</h3>
+                        <p>Kivi aromalı toz/granül sıcak içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/karadut.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Karadut Oralet</h3>
+                        <p>Karadut aromalı toz/granül sıcak içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/naneoralet.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Nane Limon Oralet</h3>
+                        <p>Nane ve limon aromalı toz/granül sıcak içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/elmalioralet.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Elmalı Oralet</h3>
+                        <p>Elma aromalı toz/granül sıcak içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kusburnuoralet.png"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Kuşburnu Oralet</h3>
+                        <p>Kuşburnu aromalı toz/granül sıcak içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/limonoralet.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Limonlu Oralet</h3>
+                        <p>Limon aromalı toz/granül sıcak içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/portakaloralet.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Portakallı Oralet</h3>
+                        <p>Portakal aromalı toz/granül sıcak içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/muzoralet.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Muzlu Oralet</h3>
+                        <p>Muz aromalı toz/granül sıcak içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/turkkahve.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Türk Kahvesi</h3>
+                        <p>İnce öğütülmüş kahve çekirdekleriyle cezvede hazırlanır.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺160.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/doubleturk.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Double Türk Kahvesi</h3>
+                        <p>Büyük bardakta servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺200.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/damlasakiz.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Damla Sakızlı Türk Kahvesi</h3>
+                        <p>Damla sakız aromalı Türk kahvesi.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺165.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kakule.png"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Kakuleli Türk Kahvesi</h3>
+                        <p>Kakule baharat aromalı Türk kahvesi.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺165.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/osmanli.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Osmanlı Türk Kahvesi</h3>
+                        <p>Osmanlı usulüyle hazırlanan Türk kahvesi.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺165.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/menengic.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Menengiç Türk Kahvesi</h3>
+                        <p>Menengiç fıstığı aromalı Türk kahvesi.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺165.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/dibek.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Dibek Türk Kahvesi</h3>
+                        <p>Dibek havanında dövülmüş Türk kahvesi.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺165.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/portakalturk.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Portakallı Türk Kahvesi</h3>
+                        <p>Portakal aromalı Türk kahvesi.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺165.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/cilekturk.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Çilekli Türk Kahvesi</h3>
+                        <p>Çilek aromalı Türk kahvesi.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺165.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/filtrekahve.png"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Filtre Kahve</h3>
+                        <p>Kağıt filtre yardımıyla süzülüp hazırlanan kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺200.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/sutlufiltre.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Sütlü Filtre Kahve</h3>
+                        <p>Süt ile zenginleştirilmiş, klasik filtre kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺200.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/vanilyafiltre.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Vanilya Aromalı Filtre Kahve</h3>
+                        <p>Vanilya aromalı, klasik filtre kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺215.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/findikfiltre.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Fındık Aromalı Filtre Kahve</h3>
+                        <p>Fındık aromalı, klasik filtre kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺215.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kahvefiltre.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Kahve Aromalı Filtre Kahve</h3>
+                        <p>Kahve aromalı, klasik filtre kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺215.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/irish.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Irish Cream Filtre Kahve</h3>
+                        <p>Irish Cream aromalı, klasik filtre kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺215.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/sicakcikolata.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Sıcak Çikolata</h3>
+                        <p>Kakao tozu ve sıcak sütle hazırlanır.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺185.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/nescafesiyah.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Nescafe</h3>
+                        <p>Nescafe markalı siyah kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺185.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/sutlunescafee.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Sütlü Nescafe</h3>
+                        <p>Süt ile zenginleştirilmiş, Nesacafe markalı siyah kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺185.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/espresso.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Espresso</h3>
+                        <p>Yüksek basınçta sıcak suyla demlenmiş klasik kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺160.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/doubleespresso.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Double Espresso</h3>
+                        <p>Büyük boy espresso kahve.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺200.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/americano.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Americano</h3>
+                        <p>İki ölçü espressonun sıcak suyla demlenmesiyle hazırlanır.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺185.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/kapucino.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Cappucino</h3>
+                        <p>Buharda ısıtılmış sıcak süt ve yoğun köpükle servis edilen espresso.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺185.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/latte.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Cafe Latte</h3>
+                        <p>Sıcak süt ve yumuşak içimli espresso.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺185.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/mocha.png"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Mocha</h3>
+                        <p>Sıcak çikolata, süt, kremadan oluşan espresso.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺185.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/sut.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Süt</h3>
+                        <p>Soğuk veya sıcak servis edilir.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺75.00
+                </div>
+            </li>
+
+                        <li>
+                <div class="fh5co-food-desc">
+                    <figure>
+                        <img src="static/images/salep.jpg"
+                             class="img-responsive"
+                             alt="Carlo Rosee Drinks">
+                    </figure>
+
+                    <div>
+                        <h3>Salep</h3>
+                        <p>Yabani bitkilerden yapılan sütlü içecek.</p>
+                    </div>
+                </div>
+
+                <div class="fh5co-food-pricing">
+                    ₺185.00
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+</body>
+</html>
